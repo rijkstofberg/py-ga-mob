@@ -414,9 +414,6 @@ class Visitor(object):
         self.screen_resolution = None
 
     def __setattr__(self, name, value):
-        if name == 'unique_id':
-            if value and value < 0 or value > 0x7fffffff:
-                raise ValueError('Visitor unique ID has to be a 32-bit integer between 0 and 0x7fffffff')
         object.__setattr__(self, name, value)
 
     def __getattribute__(self, name):
